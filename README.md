@@ -1,19 +1,21 @@
 
-## angular folder structure 
+# angular folder structure 
 
--- app
-    \- modules
-        -- [+] components
-        -- [+] services
-    \- cores
-        -- [+] authentification
-        -- [+] components
-        -- [+] layout
-        -- [+] buttons
-    \- shared
-        -- [+] pipes
-        -- [+] directives
-        -- [+] models
--- assets
+    \- app
+        \- modules
+            -- [+] components
+            -- [+] services
+        \- cores
+            -- [+] authentification
+            -- [+] components
+            -- [+] layout
+            -- [+] buttons
+        \- shared
+            -- [+] pipes
+            -- [+] directives
+            -- [+] models
+    -- assets
 
-## Documentation
+
+
+
