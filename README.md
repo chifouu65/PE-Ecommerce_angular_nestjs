@@ -1,7 +1,5 @@
-# PE-Ecommerce_angular_nestjs
 
-
-# angular folder structure 
+## angular folder structure 
 
 -- app
     \- modules
@@ -17,3 +15,5 @@
         -- [+] directives
         -- [+] models
 -- assets
+
+## Documentation
