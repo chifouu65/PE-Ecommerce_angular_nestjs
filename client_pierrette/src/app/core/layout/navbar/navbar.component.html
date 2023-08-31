@@ -1,0 +1,25 @@
+<section class="navigation ">
+  <div class="nav-container">
+    <div class="brand">
+      <a routerLink="">Pierrette Essentielle</a>
+    </div>
+    <nav>
+      <div class="nav-mobile">
+        <a id="nav-toggle" href="" (click)="toggleNav()"><span></span></a>
+      </div>
+      <ul class="nav-list">
+        <li *ngFor="let item of NavItem">
+          <a [routerLink]="item.to">{{item.name | titlecase }}</a>
+        </li>
+        <li>
+          <a routerLink="products" (click)="toggleDropdown()">Shop</a>
+          <ul class="nav-dropdown" *ngIf="isDropDownOpen">
+            <li *ngFor="let item of ShopItem">
+              <a [routerLink]="item.to">{{item.name | titlecase }}</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</section>
