@@ -1,6 +1,7 @@
 
 ## angular folder structure 
-
+    
+    src/
     |-- app/
     |    |-- modules/
     |    |    |-- home/
@@ -32,6 +33,7 @@
     |    |    |-- environment.ts
     |    |-- app-routing.module.ts
     |-- assets
+
 
 ### core: 
 Ce module contient les services et les éléments centraux 
@@ -73,3 +75,95 @@ et constituent le composant racine et le module principal de
 l'application.
 
 
+-----------------------------------------------------
+
+
+## NEST structure folder (api)
+
+    src/
+    |-- modules/
+    |   |-- auth/
+    |   |   |-- auth.controller.ts
+    |   |   |-- auth.service.ts
+    |   |   |-- jwt.strategy.ts
+    |   |   |-- auth.module.ts
+    |   |
+    |   |-- users/
+    |   |   |-- users.controller.ts
+    |   |   |-- users.service.ts
+    |   |   |-- user.entity.ts
+    |   |   |-- users.module.ts
+    |   |
+    |   |-- products/
+    |   |   |-- products.controller.ts
+    |   |   |-- products.service.ts
+    |   |   |-- product.entity.ts
+    |   |   |-- products.module.ts
+    |   |
+    |   |-- orders/
+    |   |   |-- orders.controller.ts
+    |   |   |-- orders.service.ts
+    |   |   |-- order.entity.ts
+    |   |   |-- orders.module.ts
+    |   |
+    |-- shared/
+    |   |-- dtos/
+    |   |   |-- create-user.dto.ts
+    |   |   |-- update-user.dto.ts
+    |   |   |-- create-product.dto.ts
+    |   |   |-- update-product.dto.ts
+    |   |   |-- create-order.dto.ts
+    |   |   |-- update-order.dto.ts
+    |   |
+    |   |-- decorators/
+    |   |   |-- roles.decorator.ts
+    |   |
+    |   |-- guards/
+    |   |   |-- roles.guard.ts
+    |   |
+    |-- app.controller.ts
+    |-- app.service.ts
+    |-- app.module.ts
+    |-- main.ts
+
+
+### Modules:
+Dans le répertoire modules, vous avez différentes parties de votre application, chacune regroupée dans un module dédié. Chaque module suit le modèle MVC (Modèle-Vue-Contrôleur) pour organiser les différentes couches de votre application.
+
+### auth:
+Ce module gère l'authentification des utilisateurs. Le contrôleur auth.controller.ts expose les endpoints liés à l'authentification. Le service auth.service.ts contient la logique métier de l'authentification. jwt.strategy.ts est une stratégie d'authentification basée sur JWT. Le module auth.module.ts encapsule l'ensemble du module.
+
+### users:
+Ce module gère la gestion des utilisateurs. Le contrôleur users.controller.ts expose les endpoints pour les opérations liées aux utilisateurs. Le service users.service.ts contient la logique métier liée aux utilisateurs. L'entité user.entity.ts définit la structure d'un utilisateur dans la base de données. Le module users.module.ts encapsule l'ensemble du module.
+
+### products:
+Ce module gère la gestion des produits. Il suit la même structure que le module users.
+
+### orders:
+Ce module gère la gestion des commandes. Il suit la même structure que le module users.
+
+### Shared:
+Dans le répertoire shared, vous avez des éléments réutilisables qui sont partagés entre différents modules.
+
+### dtos:
+Ce dossier contient les objets de transfert de données (DTO) pour les opérations de création et de mise à jour. Ils définissent la structure des données échangées entre le client et le serveur.
+
+### decorators:
+Ce dossier contient le décorateur @Roles que vous utiliserez pour spécifier les rôles requis pour accéder à une route particulière. Les décorateurs sont utilisés pour ajouter des métadonnées à vos classes et fonctions.
+
+### guards:
+Ce dossier contient le gardien RolesGuard qui implémente la logique de vérification des rôles. Le gardien est utilisé pour protéger certaines routes en vérifiant si l'utilisateur a les rôles nécessaires.
+
+### App Controller, Service, Module:
+
+### app.controller.ts:
+Ce contrôleur racine expose des endpoints de base pour votre application. C'est souvent utilisé pour les routes de base comme la page d'accueil.
+
+### app.service.ts:
+Ce service est associé au contrôleur racine. Il contient la logique métier de base qui peut être utilisée à travers l'application.
+
+### app.module.ts:
+C'est le module racine de l'application. Il importe tous les modules que vous avez créés, y compris les modules des différentes fonctionnalités et le module d'authentification.
+
+### Main.ts:
+C'est le point d'entrée de l'application. Il démarre le serveur NestJS et initialise l'application.
