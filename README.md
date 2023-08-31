@@ -1,4 +1,7 @@
 
+[Nestjs tutorial perms](https://www.youtube.com/watch?v=Um9wyVaB5Iw)
+[nestsj tuto token](https://www.youtube.com/watch?v=uAKzFhE3rxU)
+
 ## angular folder structure 
     
     src/
