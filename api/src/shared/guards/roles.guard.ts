@@ -1,11 +1,27 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { CanActivate, ExecutionContext, Injectable } from '@nestjs/common';
-import { Observable } from 'rxjs';
+import { Request } from 'express';
+import { Reflector } from '@nestjs/core';
+import { Role } from '../enums/roles.enum';
 
+/**
+ * @deprecated Roles guard is a simplistic RBAC approach where we just check whether the user has certain roles
+ */
 @Injectable()
 export class RolesGuard implements CanActivate {
-  canActivate(
-    context: ExecutionContext,
-  ): boolean | Promise<boolean> | Observable<boolean> {
-    return true;
+  constructor(private reflector: Reflector) {}
+
+  canActivate(context: ExecutionContext) {
+    const requiredRoles = this.reflector.getAllAndOverride<Role[]>('roles', [
+      context.getHandler(),
+      context.getClass(),
+    ]);
+
+    if (!requiredRoles || requiredRoles.length === 0) return true;
+
+    //@ts-ignore
+    const { session } = context.switchToHttp().getRequest<Request>();
+
+    return requiredRoles.some((role) => session.user.roles.includes(role));
   }
 }
