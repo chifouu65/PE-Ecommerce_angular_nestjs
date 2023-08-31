@@ -28,8 +28,8 @@
     |    |    |    |-- product.model.ts
     |    |    |    |-- cart-item.model.ts
     |    |    |-- shared.module.ts
-    |    |-- environements/
-    |    |    |-- environement.ts
+    |    |-- environments/
+    |    |    |-- environment.ts
     |    |-- app-routing.module.ts
     |-- assets
 
