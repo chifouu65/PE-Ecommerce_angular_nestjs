@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {LayoutComponent} from "./layout/layout.component";
+import {RouterLink} from "@angular/router";
 
 @NgModule({
   declarations: [
@@ -10,7 +11,8 @@ import {LayoutComponent} from "./layout/layout.component";
     LayoutComponent,
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterLink
   ]
 })
 export class CoreModule { }
