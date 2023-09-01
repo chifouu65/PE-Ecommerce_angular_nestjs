@@ -1,14 +1,2 @@
 .idea
 .vscode
-
-/api/dist
-/api/.env
-/api/.idea
-/api/.vscode
-/api/node_modules
-
-/client_pierrette/dist
-/client_pierrette/.env
-/client_pierrette/.idea
-/client_pierrette/.vscode
-/client_pierrette/node_modules
