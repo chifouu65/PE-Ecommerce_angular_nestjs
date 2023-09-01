@@ -1,5 +1,5 @@
 import { RolesBuilder } from 'nest-access-control';
-import { Role } from '../shared/enums/roles.enum';
+import { Role } from './enums/roles.enum';
 
 export const RBAC_POLICY: RolesBuilder = new RolesBuilder();
 
