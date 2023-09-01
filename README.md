@@ -1,5 +1,6 @@
 
 [Nestjs tutorial perms](https://www.youtube.com/watch?v=Um9wyVaB5Iw)
+[Nest guard, authen, autho](https://www.youtube.com/watch?v=w_ASqSZKhMQ)
 [nestsj tuto token](https://www.youtube.com/watch?v=uAKzFhE3rxU)
 
 ## angular folder structure 

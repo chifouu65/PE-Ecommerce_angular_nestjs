@@ -11,13 +11,27 @@ datasource db {
 }
 
 model User {
-  id  Int @id @default(autoincrement())
-  createdAt DateTime  @default(now())
-  updatedAt DateTime  @updatedAt
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
-  email String @unique
-  hash  String
-  hasedAt String?
+  email   String  @unique
+  hash    String
+  hasedRt String?
 
-  @@map("users")
+  rank UserRank[]
+}
+
+model UserRank {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  role String
+
+  userId Int
+
+  assignedAt DateTime @default(now())
+  assignedBy String
+  User       User     @relation(fields: [userId], references: [id])
 }
